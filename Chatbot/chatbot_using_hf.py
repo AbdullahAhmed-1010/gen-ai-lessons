@@ -30,11 +30,11 @@ while True:
     if user_input.lower() == "exit":
         break
     
-    # prompt = generate_prompt(chat_history, user_input)
-    # result = model.invoke(prompt)
-    # print("AI:", result.content)
-    # # Extract the true reply after <|assistant|> to </s>
-    # reply = str(result.content).split('<|assistant|>')[-1].split('</s>')[0].strip()
-    # chat_history.append((user_input, reply))
+    prompt = generate_prompt(chat_history, user_input)
+    result = model.invoke([HumanMessage(content=prompt)])
+    print("AI:", result.content)
+    # Extract the true reply after <|assistant|> to </s>
+    reply = str(result.content).split("<|assistant|>")[-1].split("</s>")[0].strip()
+    chat_history.append((user_input, reply))
 
 print(chat_history)
