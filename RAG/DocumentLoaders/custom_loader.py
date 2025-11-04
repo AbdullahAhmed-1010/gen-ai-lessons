@@ -6,6 +6,5 @@ class MyCustomDocumentLoader(BaseLoader):
     Finally, create our own DocumentLoader."""
     pass
 
-
 # Learn more about DocumentLoader from Official Docs:
 # https://python.langchain.com/docs/concepts/document_loaders/
